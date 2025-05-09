@@ -9,14 +9,14 @@ os.makedirs("images", exist_ok=True)
 # Define the neural network fractal with updated labels
 def define_layers():
     return {
-        'Suis': [
+        'Nonself': [
             'Household Wealth', 'Firm Records', 'Disclosure Risk', 
             'Other Governments', 'Accounts/Databases', 'Instruments/Contracts'
         ],
-        'Voir': ['Government'],  
-        'Choisis': ['Nationalism', 'Faustian Bargain'],  
-        'Deviens': ['Emergence', 'Obfuscation', 'Derivatives'],  
-        "M'èléve": ['Bluff', 'Scaling', 'Rituals', 'Variation', 'Culture']  
+        'Self': ['Government'],  
+        'Conflict': ['Nationalism', 'Faustian Bargain'],  
+        'Negotiation': ['Emergence', 'Obfuscation', 'Derivatives'],  
+        "Flourishing": ['Bluff', 'Scaling', 'Rituals', 'Variation', 'Culture']  
     }
 
 # Maintain color assignments with corrected node labels
