@@ -27,14 +27,15 @@ def assign_colors():
         'lightgreen': ['Accounts/Databases', 'Obfuscation', 'Scaling', 'Variation', 'Rituals'],  
         'lightsalmon': [
             'Disclosure Risk', 'Other Governments', 'Nationalism',  
-            'Emergence', 'Bluff', 'Household Wealth', 'Firm Records'
+            'Emergence', 'Bluff'
         ],
+        'lightgray': ['Household Wealth', 'Firm Records']  # explicitly assign gray
     }
     return {node: color for color, nodes in color_map.items() for node in nodes}
 
-# Calculate positions (top-down layout)
+# Calculate centered x positions for nodes
 def calculate_positions(layer, y_offset):
-    x_positions = np.linspace(-len(layer) / 2, len(layer) / 2, len(layer))
+    x_positions = np.linspace(-((len(layer) - 1) / 2), ((len(layer) - 1) / 2), len(layer))
     return [(x, y_offset) for x in x_positions]
 
 # Create and visualize the neural network graph (top-down orientation)
@@ -47,16 +48,18 @@ def visualize_nn():
 
     # Add nodes and assign top-down positions
     for i, (layer_name, nodes) in enumerate(reversed(list(layers.items()))):
-        positions = calculate_positions(nodes, y_offset=i * -2)
+        y_offset = i * -2
+        positions = calculate_positions(nodes, y_offset)
         for node, position in zip(nodes, positions):
             G.add_node(node, layer=layer_name)
             pos[node] = position
             node_colors.append(colors.get(node, 'lightgray'))
 
-    # Add edges between consecutive layers
+    # Add edges from Nonself (bottom) to Flourishing (top)
     layer_names = list(layers.keys())
     for i in range(len(layer_names) - 1):
-        source_layer, target_layer = layer_names[i], layer_names[i + 1]
+        source_layer = layer_names[i]
+        target_layer = layer_names[i + 1]
         for source in layers[source_layer]:
             for target in layers[target_layer]:
                 G.add_edge(source, target)
@@ -68,7 +71,9 @@ def visualize_nn():
         node_size=3000, font_size=13, connectionstyle="arc3,rad=0.2"
     )
     plt.title("Tidjane Thiam", fontsize=24)
-    plt.savefig("images/tidgane-thiam.jpeg", dpi=300, bbox_inches='tight')
+
+    # Save image
+    plt.savefig("images/tidjane-thiam.jpeg", dpi=300, bbox_inches='tight')
 
 # Run the visualization
 visualize_nn()
