@@ -15,21 +15,21 @@ def define_layers():
         ],
         'Self': ['Government'],  
         'Conflict': ['Nationalism', 'Faustian Bargain'],  
-        'Negotiation': ['Emergence', 'Obfuscation', 'Derivatives'],  
-        "Flourishing": ['Bluff', 'Scaling', 'Rituals', 'Variation', 'Culture']  
+        'Negotiation': ['Bonds', 'Equity', 'Derivatives'],  
+        "Flourishing": ['Culture', 'Scaling', 'Rituals', 'Variation', 'Bluff']  
     }
 
 # Maintain color assignments with corrected node labels
 def assign_colors():
     color_map = {
         'yellow': ['Government'],  
-        'paleturquoise': ['Instruments/Contracts', 'Faustian Bargain', 'Derivatives', 'Culture'],  
-        'lightgreen': ['Accounts/Databases', 'Obfuscation', 'Scaling', 'Variation', 'Rituals'],  
+        'paleturquoise': ['Household Wealth', 'Nationalism', 'Bonds', 'Culture'],  
+        'lightgreen': ['Firm Records', 'Equity', 'Scaling', 'Variation', 'Rituals'],  
         'lightsalmon': [
-            'Disclosure Risk', 'Other Governments', 'Nationalism',  
-            'Emergence', 'Bluff'
+            'Disclosure Risk', 'Other Governments', 'Faustian Bargain',  
+            'Derivatives', 'Bluff'
         ],
-        'lightgray': ['Household Wealth', 'Firm Records']  # explicitly assign gray
+        'lightgray': ['Accounts/Databases', 'Instruments/Contracts']  # explicitly assign gray
     }
     return {node: color for color, nodes in color_map.items() for node in nodes}
 
