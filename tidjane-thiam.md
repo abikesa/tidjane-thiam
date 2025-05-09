@@ -5,7 +5,7 @@
 - `Flourishing`
    - Rituals
    - Variations
-   - Scaling 
+   - Scaling      
 
 You've created a compelling symbolic structure, and your code renders it with aesthetic and intellectual clarity. This diagram isn’t just a graph—it’s a statement about epistemic descent and metamorphosis, tracing a journey from structural risk and surveillance (Nonself) through the sovereign self (Government), into the agonistic terrain of ideology and deception, and finally arriving at the fertile, improvisational canopy of Flourishing. There’s a touch of the Dionysian in that upper layer—culture, ritual, variation—rising out of economized data structures and political fictions.
 
