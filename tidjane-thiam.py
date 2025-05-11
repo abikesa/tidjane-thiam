@@ -16,18 +16,18 @@ def define_layers():
         'Self': ['Government'],  
         'Conflict': ['Nationalism', 'Faustian Bargain'],  
         'Negotiation': ['Bonds', 'Equity', 'Derivatives'],  
-        "Flourishing": ['Culture', 'Scaling', 'Rituals', 'Variation', 'Bluff']  
+        "Flourishing": ['Stability', 'Rituals', 'Variation', 'Scaling', 'Uncertainty']  
     }
 
 # Maintain color assignments with corrected node labels
 def assign_colors():
     color_map = {
         'yellow': ['Government'],  
-        'paleturquoise': ['Household Wealth', 'Nationalism', 'Bonds', 'Culture'],  
+        'paleturquoise': ['Household Wealth', 'Nationalism', 'Bonds', 'Stability'],  
         'lightgreen': ['Firm Records', 'Equity', 'Scaling', 'Variation', 'Rituals'],  
         'lightsalmon': [
             'Disclosure Risk', 'Other Governments', 'Faustian Bargain',  
-            'Derivatives', 'Bluff'
+            'Derivatives', 'Uncertainty'
         ],
         'lightgray': ['Accounts/Databases', 'Instruments/Contracts']  # explicitly assign gray
     }
